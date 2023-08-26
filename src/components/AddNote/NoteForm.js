@@ -21,7 +21,7 @@ const NoteForm = () => {
           </div>
           <div className={classes.control}>
             <label>Note</label>
-            <textarea rows="4" cols="50" placeholder="Add note here..."></textarea>
+            <textarea rows="5" cols="50" placeholder="Add note here..."></textarea>
           </div>
 
           <div className={classes.actions}>

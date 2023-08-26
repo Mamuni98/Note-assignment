@@ -1,5 +1,4 @@
 .form {
-  margin: 0.1rem auto;
   width: 93%;
   max-width: 50rem;
   text-align: center;
@@ -47,7 +46,7 @@
 
 .actions {
   text-align: center;
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
 }
 .actions button {
   border: rgb(6, 108, 172);
