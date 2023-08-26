@@ -1,0 +1,15 @@
+.read {
+    margin: 2rem auto;
+    text-align: center;
+}
+.read h1 {
+    color:rgb(4, 83, 132);
+    
+}
+
+.read p {
+    display: block;
+    padding: 2rem;
+    font-size: 18px;
+    line-height: 200%;
+}

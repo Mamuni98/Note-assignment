@@ -3,6 +3,7 @@ import AddNote from "./components/AddNote/AddNote";
 import NoteFilter from "./components/NoteFilter/NoteFilter";
 import NoteList from "./components/NoteLists/NoteList";
 import SearchBar from "./components/Search/SearchBar";
+//import NoteRead from "./components/NoteRead/NoteRead";
 function App() {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App() {
       <SearchBar/>
       <NoteFilter />
       <NoteList/>
+      {/* <NoteRead/> */}
     </div>
   );
 }
