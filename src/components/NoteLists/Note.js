@@ -4,8 +4,12 @@ import { showFormActions } from "../store/note-form";
 const Note = (props) => {
   const dispatch = useDispatch();
   const editNoteHandler = () => {
+   dispatch(showFormActions.editNote(props));
     dispatch(showFormActions.showForm());
   };
+  const deleteNoteHandler = () => {
+    dispatch(showFormActions.deleteNote(props.id));
+  }
   return (
     <li className={classes.list}>
       <div className={classes.listcontent}>
@@ -14,7 +18,7 @@ const Note = (props) => {
       </div>
       <div className={classes.listbtns}>
         <button onClick={editNoteHandler}>Edit</button>
-        <button>Delete</button>
+        <button onClick={deleteNoteHandler}>Delete</button>
       </div>
     </li>
   );

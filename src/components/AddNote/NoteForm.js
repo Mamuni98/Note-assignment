@@ -1,13 +1,24 @@
 import classes from "./NoteForm.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { showFormActions } from "../store/note-form";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 const NoteForm = () => {
   const dispatch = useDispatch();
+  const editData = useSelector((state) => state.noteForm.editData);
+
   const titleRef = useRef();
   const subjectRef = useRef();
   const noteRef = useRef();
+  
+  useEffect(() => {
+    const objArr = Object.keys(editData);
+    if (objArr.length > 0) {
+      titleRef.current.value = editData.title;
+      subjectRef.current.value = editData.subject;
+      noteRef.current.value = editData.notes;
+    }
+  }, [editData]);
 
   const hideFormHandler = () => {
     dispatch(showFormActions.hideForm());
@@ -16,11 +27,17 @@ const NoteForm = () => {
   const formSubmitHandler = (event) => {
     event.preventDefault();
     const data = {
+      id: Math.random().toString(),
       title: titleRef.current.value,
       subject: subjectRef.current.value,
       notes: noteRef.current.value,
     };
-    console.log(data);
+    if (data.title.length > 0 && data.notes.length > 0) {
+      dispatch(showFormActions.addNote(data));
+    } else {
+      alert("Please fill the title and note field.");
+    }
+
     dispatch(showFormActions.hideForm());
   };
   return (

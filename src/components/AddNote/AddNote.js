@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { showFormActions } from "../store/note-form";
 const AddNote = () => {
   const dispatch = useDispatch();
-  const show = useSelector((state) => state.showForm.show);
+  const show = useSelector((state) => state.noteForm.show);
   const showFormHandler = () => {
     dispatch(showFormActions.showForm());
   };

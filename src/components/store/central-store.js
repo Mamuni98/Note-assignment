@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import ShowFormReducer from "./note-form";
+import NoteFormReducer from "./note-form";
 
 const store = configureStore({
   reducer: {
-    showForm: ShowFormReducer,
+    noteForm: NoteFormReducer,
   },
 });
 
