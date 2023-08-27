@@ -76,7 +76,7 @@ const NoteForm = () => {
             <button type="button" onClick={hideFormHandler}>
               Cancel
             </button>
-            <button type="submit">Add Expense</button>
+            <button type="submit">Add Note</button>
           </div>
         </div>
       </form>
