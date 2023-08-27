@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const NoteRead = () => {
   const readDetail = useSelector((state) => state.noteForm.readDetail);
+  //console.log(readDeatil);
   const history = useNavigate();
   const stopReading = () => {
     history('/');

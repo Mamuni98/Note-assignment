@@ -7,7 +7,8 @@ const NoteList = () => {
   const subj = useSelector((state) => state.noteFilter.filterSubject);
   const filter = useSelector((state) => state.noteFilter.filter);
   const searchTerm = useSelector((state) => state.noteFilter.searchLetter);
-
+  // console.log(searchTerm);
+  // console.log(filter);
   let list;
   if (filter) {
     list = noteList.filter((note) => note.subject === subj);

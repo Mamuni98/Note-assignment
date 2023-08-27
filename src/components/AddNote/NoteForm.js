@@ -6,11 +6,11 @@ import { useRef, useEffect } from "react";
 const NoteForm = () => {
   const dispatch = useDispatch();
   const editData = useSelector((state) => state.noteForm.editData);
-
+  //console.log(editData);
   const titleRef = useRef();
   const subjectRef = useRef();
   const noteRef = useRef();
-  
+
   useEffect(() => {
     const objArr = Object.keys(editData);
     if (objArr.length > 0) {

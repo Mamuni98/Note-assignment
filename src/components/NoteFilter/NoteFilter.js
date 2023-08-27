@@ -14,7 +14,7 @@ const NoteFilter = () => {
     event.preventDefault();
     setSubject(event.target.value);
   };
-
+  //console.log(subject);
   return (
     <div className={classes.filter}>
       <form className={classes.filtercontrol}>
