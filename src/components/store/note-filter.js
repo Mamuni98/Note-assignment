@@ -19,7 +19,8 @@ const noteFilterSlice = createSlice({
         state.filter = true;
       } else {
         state.filter = false;
-        state.searchLetter = action.payload;
+        const letters = action.payload.toLowerCase();
+        state.searchLetter = letters;
       }
     },
   },
