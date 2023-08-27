@@ -3,7 +3,18 @@ import Note from "./Note";
 import { useSelector } from "react-redux";
 
 const NoteList = () => {
-  const list = useSelector((state) => state.noteForm.noteList);
+  const noteList = useSelector((state) => state.noteForm.noteList);
+  const sub = useSelector((state) => state.noteFilter.filterSubject);
+  const filter = useSelector((state) => state.noteFilter.filter);
+
+  let list;
+  if(filter){
+    list = noteList.filter((note) => note.subject === sub);
+  }
+  else{
+    list = noteList;
+  }
+  
   return (
     <ul className={classes.notelists}>
       {list.map((note) => {

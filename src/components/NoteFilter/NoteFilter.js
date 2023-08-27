@@ -1,12 +1,20 @@
 import classes from "./NoteFilter.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { noteFilterActions } from "../store/note-filter";
 const NoteFilter = () => {
+  const dispatch = useDispatch();
   const [subject, setSubject] = useState("Physics");
+
+  useEffect(() => {
+    dispatch(noteFilterActions.addFilterSubject(subject));
+  }, [subject, dispatch]);
+
   const filterSubjectHandler = (event) => {
     event.preventDefault();
     setSubject(event.target.value);
   };
-  console.log(subject);
+
   return (
     <div className={classes.filter}>
       <form className={classes.filtercontrol}>
