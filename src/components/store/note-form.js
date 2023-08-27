@@ -47,6 +47,7 @@ const showFormSlice = createSlice({
       state.show = false;
     },
     addNote(state, action) {
+      //console.log(action.payload);
       const editArr = Object.keys(state.editData);
       if (editArr.length > 0) {
         const existingItemIndex = state.noteList.findIndex(
@@ -63,12 +64,14 @@ const showFormSlice = createSlice({
       state.editData = action.payload;
     },
     deleteNote(state, action) {
+      //console.log(action.payload);
       const updatedList = state.noteList.filter(
         (item) => item.id !== action.payload
       );
       state.noteList = updatedList;
     },
     addNoteRead(state, action) {
+      //console.log(action.payload);
       state.readDetail = action.payload;
     },
   },

@@ -11,10 +11,12 @@ const noteFilterSlice = createSlice({
   initialState: noteFilterInitialState,
   reducers: {
     addFilterSubject(state, action) {
+      //console.log(action.payload);
       state.filter = true;
       state.filterSubject = action.payload;
     },
     addSearchLetter(state, action) {
+      //console.log(action.payload);
       if (action.payload.length === 0) {
         state.filter = true;
       } else {
