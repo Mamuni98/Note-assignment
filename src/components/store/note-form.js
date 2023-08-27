@@ -33,6 +33,7 @@ const showFormInitialState = {
   show: false,
   noteList: Dummy_notes,
   editData: {},
+  readDetail: {},
 };
 
 const showFormSlice = createSlice({
@@ -66,6 +67,9 @@ const showFormSlice = createSlice({
         (item) => item.id !== action.payload
       );
       state.noteList = updatedList;
+    },
+    addNoteRead(state, action) {
+      state.readDetail = action.payload;
     },
   },
 });

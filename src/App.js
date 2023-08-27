@@ -1,17 +1,14 @@
 import "./App.css";
-import AddNote from "./components/AddNote/AddNote";
-import NoteFilter from "./components/NoteFilter/NoteFilter";
-import NoteList from "./components/NoteLists/NoteList";
-import SearchBar from "./components/Search/SearchBar";
-//import NoteRead from "./components/NoteRead/NoteRead";
+import FinalPage from "./components/FinalPage/FinalPage";
+import NoteRead from "./components/NoteRead/NoteRead";
+import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <AddNote />
-      <SearchBar/>
-      <NoteFilter />
-      <NoteList/>
-      {/* <NoteRead/> */}
+      <Routes>
+        <Route path="/" element={<FinalPage />} />
+        <Route path="/:noteId" element={<NoteRead />} />
+      </Routes>
     </div>
   );
 }
