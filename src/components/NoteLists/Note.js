@@ -27,7 +27,7 @@ const Note = (props) => {
   };
   return (
     <li className={classes.list}>
-      <Link to={`/${props.id}`}>
+      <Link to={`/${props.id}`} title="Click here to read the note">
         <div className={classes.listcontent} onClick={readNoteHandler}>
           <h3>{props.title}</h3>
           <h4>{props.subject}</h4>

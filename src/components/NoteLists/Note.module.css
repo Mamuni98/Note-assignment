@@ -12,6 +12,11 @@
 }
 .list a {
   text-decoration: none;
+  cursor: pointer;
+}
+.list a:hover,
+.list a:active {
+  background-color:rgb(250, 253, 254);
 }
 .listcontent {
   display: flex;
